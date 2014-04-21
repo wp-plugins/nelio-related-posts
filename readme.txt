@@ -1,6 +1,6 @@
 === Nelio Related Posts ===
 Contributors: nelio
-Tags: ab testing, ab test, a/b testing, a/b test, a b testing, a b test, split testing, website optimization, conversion optimization, optimization, conversion, heatmap, heatmaps
+Tags: related post, swiftype, search, cached
 Requires at least: 3.3
 Tested up to: 3.9
 Stable tag: 1.0.0
