@@ -33,6 +33,10 @@ your own search query.
 
 == Changelog ==
 
+= 1.0.1 =
+* Fix: removed an extra anchor 'a' closing tag.
+
+
 = 1.0.0 =
 * First release.
 * Get a list related posts using Swiftype and/or regular WordPress search
@@ -41,5 +45,5 @@ capabilities.
 
 == Upgrade Notice ==
 
-= 1.0.0 =
-First release.
+= 1.0.1 =
+Tiny fix: removed an extra anchor closing tag.

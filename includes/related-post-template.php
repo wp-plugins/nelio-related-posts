@@ -29,7 +29,6 @@ public static function render( $post ) {
 			echo get_the_post_thumbnail( $post->ID, 'thumbnail' );
 			echo $close_link;
 			?>
-			</a>
 		</div>
 		<?php
 		} ?>
