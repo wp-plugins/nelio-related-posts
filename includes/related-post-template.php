@@ -6,7 +6,7 @@ public static function render( $post ) {
 	ob_start();
 
 	$open_link = sprintf(
-		'<a href="%s" title="%s">',
+		'<a class="related_post_link" href="%s" title="%s">',
 		get_permalink( $post->ID ),
 		esc_attr( apply_filters( 'the_title', $post->post_title ) )
 	);

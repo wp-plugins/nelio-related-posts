@@ -3,7 +3,7 @@ Contributors: nelio
 Tags: related post, swiftype, search, cached
 Requires at least: 3.3
 Tested up to: 3.9
-Stable tag: 1.0.0
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,11 @@ your own search query.
 
 == Changelog ==
 
+= 1.0.2 =
+* Class "related_post_link" added to all related post links (useful for GA)
+* Small tweaks
+
+
 = 1.0.1 =
 * Fix: removed an extra anchor 'a' closing tag.
 
@@ -45,5 +50,5 @@ capabilities.
 
 == Upgrade Notice ==
 
-= 1.0.1 =
-Tiny fix: removed an extra anchor closing tag.
+= 1.0.2 =
+Small tweaks.
