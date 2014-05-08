@@ -27,8 +27,18 @@ Search](https://wordpress.org/plugins/swiftype-search/) plugin installed.
 Swiftype account.
 * **Regular WordPress Search** You can also use the plugin without a Swiftype
 account. Just install the plugin and the regular WordPress search will be used.
-* **Highly customizable** Related posts are based on tags. However, you can use
+* **Advanced search** Related posts are based on tags. However, you can use
 your own search query.
+* **Customization** You can tweak a few details of the related post list, such
+as the section title, the number of words in the excerpt, or the number of days
+for the cache will be valid.
+
+
+== Screenshots ==
+
+1. **Easy Settings.** Don't get lost with thousand of options. Tweak the
+essentials and you're done!
+2. **Custom Search.** Define a custom search query string for each post.
 
 
 == Changelog ==
