@@ -20,6 +20,9 @@ override it using your own search query string.
 in mind you must have the official [Swiftype
 Search](https://wordpress.org/plugins/swiftype-search/) plugin installed.
 
+_Featured image by [Thomas
+Tolkien](https://www.flickr.com/photos/tomtolkien/4821397096)_
+
 
 = Features =
 
