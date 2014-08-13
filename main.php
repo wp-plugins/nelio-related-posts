@@ -19,7 +19,7 @@
 /*
  * Plugin Name: Nelio Related Posts
  * Description: Get a list of Related Posts by querying your Swiftype account. If Swiftype is not available, it uses WordPress' regular search system.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Nelio Software
  * Plugin URI: http://neliosoftware.com
  * Text Domain: neliosrp
@@ -28,7 +28,7 @@
 // ==========================================================================
 // PLUGIN INFORMATION
 // ==========================================================================
-	define( 'NELIOSRP_PLUGIN_VERSION', '1.0.2' );
+	define( 'NELIOSRP_PLUGIN_VERSION', '1.0.3' );
 	define( 'NELIOSRP_PLUGIN_NAME', 'Nelio Related Posts' );
 	define( 'NELIOSRP_PLUGIN_DIR_NAME', basename( dirname( __FILE__ ) ) );
 

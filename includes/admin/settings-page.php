@@ -117,6 +117,26 @@ class NelioSRPSettingsPage {
 		);	  
 
 
+		add_settings_field(
+			'two_columns', 
+			'Two Columns', 
+		// ----------------------------------------------------------------
+			array( $this, 'two_columns_label_callback' ), 
+			'neliosrp-settings', 
+			'rel_posts_section'
+		);	  
+
+
+		add_settings_field(
+			'auto_append', 
+			'Location of Rel. Posts', 
+		// ----------------------------------------------------------------
+			array( $this, 'auto_append_label_callback' ), 
+			'neliosrp-settings', 
+			'rel_posts_section'
+		);	  
+
+
 		add_settings_section(
 			'cache_section',
 		// ================================================================
@@ -156,7 +176,7 @@ class NelioSRPSettingsPage {
 	}
 
 	public function use_excerpt_callback() { ?>
-		<input type="checkbox" id="use_excerpt" name="neliosrp_settings[use_excerpt]" value="r" <?php
+		<input type="checkbox" id="use_excerpt" name="neliosrp_settings[use_excerpt]" <?php
 			checked( NelioSRPSettings::use_excerpt_if_available() );
 		?> /><?php
 	}
@@ -175,6 +195,44 @@ class NelioSRPSettingsPage {
 			NelioSRPSettings::get_read_more_label(),
 			NelioSRPSettings::DEFAULT_READ_MORE_LABEL
 		);
+	}
+
+	public function two_columns_label_callback() { ?>
+		<input type="checkbox" id="two_columns" name="neliosrp_settings[two_columns]" <?php
+			checked( NelioSRPSettings::use_two_columns() );
+		?> /><?php
+	}
+
+	public function auto_append_label_callback() {
+		$field_name = 'auto_append';
+		printf(
+			'<select id="%1$s" name="neliosrp_settings[%1$s]" style="width:100%;" value="%s">',
+			$field_name,
+			(NelioSRPSettings::append_to_content_automatically() ? '1':'0')
+		);
+		?>
+			<option value='1'><?php _e( 'Append automatically after post\'s content', 'nelioab' ); ?></option>
+			<option value='0'<?php
+				if ( !NelioSRPSettings::append_to_content_automatically() )
+					echo ' selected="selected"';
+			?>><?php _e( 'Place manually in your theme', 'nelioab' ); ?></option>
+		</select>
+		<br><span id="<?php echo $field_name; ?>-descr" class="description"><?php
+			_e( 'Edit your theme and call the following function from wherever you want the related posts to appear:<br><strong>neliosrp_the_related_posts();</strong>' );
+		?></span>
+		<script>
+			jQuery(document).ready(function() {
+				var change = function() {
+					var option = jQuery("#<?php echo $field_name; ?>").attr('value');
+					var descr = jQuery("#<?php echo $field_name; ?>-descr");
+					if ( option == 0 ) descr.show();
+					else descr.hide();
+				};
+				change();
+				jQuery("#<?php echo $field_name; ?>").on("change", function() { change(); });
+			});
+		</script>
+		<?php
 	}
 
 	public function cache_interval_callback() {

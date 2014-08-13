@@ -3,11 +3,12 @@ Contributors: nelio
 Tags: related post, swiftype, search, cached
 Requires at least: 3.3
 Tested up to: 3.9
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Get a list of Related Posts by querying your Swiftype account.
+Get a list of Related Posts by querying your Swiftype account, or using
+WordPress' regular search functions.
 
 == Description ==
 
@@ -46,6 +47,11 @@ essentials and you're done!
 
 == Changelog ==
 
+= 1.0.3 =
+* Added a new helper function for inserting the related posts wherever you
+want, by simply editing your (child) theme.
+
+
 = 1.0.2 =
 * Class "related_post_link" added to all related post links (useful for GA)
 * Small tweaks
@@ -63,5 +69,6 @@ capabilities.
 
 == Upgrade Notice ==
 
-= 1.0.2 =
-Small tweaks.
+= 1.0.3 =
+Helper function for inserting related posts manually in theme.
+

@@ -11,7 +11,8 @@ if ( !class_exists( 'NelioSRPMain' ) ) {
 		public function __construct() {
 			if ( !is_admin() ) {
 				add_action( 'wp_enqueue_scripts',  array( &$this, 'add_styles' ) );
-				add_filter( 'the_content',         array( &$this ,'append_related_posts' ) );
+				if ( NelioSRPSettings::append_to_content_automatically() )
+					add_filter( 'the_content',         array( &$this ,'append_related_posts' ) );
 			}
 			else {
 				add_action( 'save_post',           array( &$this, 'reset_related_posts' ) );
@@ -28,25 +29,39 @@ if ( !class_exists( 'NelioSRPMain' ) ) {
 				return $content;
 
 			remove_filter( 'the_content', array( &$this ,'append_related_posts' ) );
+			$res = $this->the_related_posts();
+			add_filter( 'the_content', array( &$this ,'append_related_posts' ) );
+			return $content . $res;
+		}
+
+		public function the_related_posts() {
 			require_once( NELIOSRP_DIR . '/related-post-template.php' );
 			$related_posts = $this->get_related_posts();
 			$num_of_posts  = min( count( $related_posts ), NelioSRPSettings::get_max_num_of_rel_posts() );
-
 			$res = '';
 			if ( $num_of_posts > 0 ) {
-				$res .= '<div id="neliosrp" class="neliosrp-widget" data-swiftype-index="false">';
+				if ( NelioSRPSettings::use_two_columns() )
+					$two_cols_class = ' neliosrp-two-columns';
+				else
+					$two_cols_class = '';
+				$res .= '<div id="neliosrp" class="neliosrp-widget' . $two_cols_class . '" data-swiftype-index="false">';
 				$res .= '<h2>';
 				$res .= strtr( NelioSRPSettings::get_title(), array( '{post_title}' => $post->post_title ) );
 				$res .= '</h2>';
+
+				$i = 0;
+				$div = '<div class="neliosrp-row">';
 				for ( $i = 0; $i < $num_of_posts; ++$i ) {
+					if ( $i%2 == 0 ) $res .= $div;
 					$rel_post = $related_posts[$i];
 					$res .= NelioSRPRelatedPostTemplate::render( $rel_post );
+					if ( $i%2 != 0 ) $res .= '</div>';
 				}
+				if ( $i%2 != 0 ) $res .= '</div>';
 				$res .= '</div>';
-			}
 
-			add_filter( 'the_content', array( &$this ,'append_related_posts' ) );
-			return $content . $res;
+			}
+			return $res;
 		}
 
 		public function get_related_posts() {
@@ -109,7 +124,13 @@ if ( !class_exists( 'NelioSRPMain' ) ) {
 
 	}
 
-	$aux = new NelioSRPMain();
+}
+$neliosrp_main = new NelioSRPMain();
+function neliosrp_the_related_posts() {
+	if ( NelioSRPSettings::append_to_content_automatically() )
+		return;
+	global $neliosrp_main;
+	echo $neliosrp_main->the_related_posts();
 }
 
 ?>

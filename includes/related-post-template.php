@@ -13,15 +13,7 @@ public static function render( $post ) {
 	$close_link = '</a>';
 	?>
 
-	<article class="post-<?php echo $post->ID; ?> post type-post status-publish entry" itemscope="itemscope">
-		<div class="entry-title">
-			<p><?php
-				echo $open_link;
-				echo apply_filters( 'the_title', $post->post_title );
-				echo $close_link;
-			?></p>
-		</div>
-		<?php
+	<article class="post-<?php echo $post->ID; ?> post type-post status-publish entry" itemscope="itemscope"><?php
 		if ( has_post_thumbnail( $post->ID ) ) { ?>
 		<div class="featured-image alignleft">
 			<?php
@@ -32,6 +24,13 @@ public static function render( $post ) {
 		</div>
 		<?php
 		} ?>
+		<div class="entry-title">
+			<p><?php
+				echo $open_link;
+				echo apply_filters( 'the_title', $post->post_title );
+				echo $close_link;
+			?></p>
+		</div>
 		<div class="entry-content">
 			<?php echo neliosrp_extract_excerpt( $post, NelioSRPSettings::get_max_num_of_words_in_excerpt() ); ?>
 			<?php
