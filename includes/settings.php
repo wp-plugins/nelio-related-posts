@@ -5,7 +5,6 @@ class NelioSRPSettings {
 	const DEFAULT_NUM_OF_REL_POSTS         = 10;
 	const DEFAULT_NUM_OF_WORDS_IN_EXCERPT  = 80;
 	const DEFAULT_READ_MORE_LABEL          = 'Read more';
-	const DEFAULT_SECTION_TITLE            = 'Related Posts \'{post_title}\'';
 	const DEFAULT_USE_EXCERPT_IF_AVAILABLE = true;
 	const DEFAULT_DAYS_FOR_CACHE           = 10;
 	const DEFAULT_AUTO_APPEND_TO_CONTENT   = true;
@@ -13,13 +12,6 @@ class NelioSRPSettings {
 
 	public static function get_settings() {
 		return get_option( 'neliosrp_settings', array()	);
-	}
-
-	public static function get_title() {
-		$settings = NelioSRPSettings::get_settings();
-		if ( isset( $settings['section_title'] ) )
-			return $settings['section_title'];
-		return NelioSRPSettings::DEFAULT_SECTION_TITLE;
 	}
 
 	public static function get_max_num_of_rel_posts() {
@@ -57,13 +49,6 @@ class NelioSRPSettings {
 		return NelioSRPSettings::DEFAULT_DAYS_FOR_CACHE;
 	}
 
-	public static function append_to_content_automatically() {
-		$settings = NelioSRPSettings::get_settings();
-		if ( isset( $settings['auto_append'] ) )
-			return $settings['auto_append'];
-		return NelioSRPSettings::DEFAULT_AUTO_APPEND_TO_CONTENT;
-	}
-
 	public static function use_two_columns() {
 		$settings = NelioSRPSettings::get_settings();
 		if ( isset( $settings['two_columns'] ) )
@@ -81,12 +66,6 @@ class NelioSRPSettings {
 
 		// RELATED POSTS
 		// ------------------------------------------------
-
-		$new_input['section_title'] = NelioSRPSettings::DEFAULT_SECTION_TITLE;
-		if( isset( $input['section_title'] ) )
-			$new_input['section_title'] = sanitize_text_field( $input['section_title'] );
-		if ( strlen( $new_input['section_title'] ) == 0 )
-			$new_input['section_title'] = NelioSRPSettings::DEFAULT_SECTION_TITLE;
 
 		$new_input['max_num_of_rel_posts'] = NelioSRPSettings::DEFAULT_NUM_OF_REL_POSTS;
 		if( isset( $input['max_num_of_rel_posts'] ) )
@@ -107,12 +86,6 @@ class NelioSRPSettings {
 			$new_input['read_more_label'] = sanitize_text_field( $input['read_more_label'] );
 		if ( strlen( $new_input['read_more_label'] ) == 0 )
 			$new_input['read_more_label'] = NelioSRPSettings::DEFAULT_READ_MORE_LABEL;
-
-		$new_input['auto_append'] = NelioSRPSettings::DEFAULT_AUTO_APPEND_TO_CONTENT;
-		if( isset( $input['auto_append'] ) ) {
-			$new_input['auto_append'] = sanitize_text_field( $input['auto_append'] );
-			$new_input['auto_append'] = $new_input['auto_append'] == '1';
-		}
 
 		$new_input['two_columns'] = 0;
 		if( isset( $input['two_columns'] ) )

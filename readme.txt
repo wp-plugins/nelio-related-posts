@@ -3,7 +3,7 @@ Contributors: nelio
 Tags: related post, swiftype, search, cached
 Requires at least: 3.3
 Tested up to: 4.0
-Stable tag: 1.0.3
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,12 @@ essentials and you're done!
 
 == Changelog ==
 
+= 2.0.0 =
+* Swiftype Related Posts are now widget based. Place them wherever you want!
+* Some minor improvements.
+* Added a reference to our A/B Testing service.
+
+
 = 1.0.3 =
 * Added a new helper function for inserting the related posts wherever you
 want, by simply editing your (child) theme.
@@ -69,6 +75,6 @@ capabilities.
 
 == Upgrade Notice ==
 
-= 1.0.3 =
-Helper function for inserting related posts manually in theme.
+= 2.0.0 =
+Insert swiftype related posts using the new widget.
 

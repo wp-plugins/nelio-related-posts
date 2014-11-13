@@ -23,12 +23,11 @@ function neliosrp_search_query_meta( $post ) {
 
 add_action( 'save_post', 'neliosrp_save_query_string' );
 function neliosrp_save_query_string( $post_ID ) {
-	global $post;
-	if( $post->post_type == 'post' ) {
+	$post = get_post( $post_ID );
+	if( $post && $post->post_type == 'post' ) {
 		if (isset( $_POST['neliosrp_search_query'] ) ) {
 			update_post_meta( $post_ID, '_neliosrp_search_query', strip_tags( $_POST['neliosrp_search_query'] ) );
 		}
 	}
 }
 
-?>

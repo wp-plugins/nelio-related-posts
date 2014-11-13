@@ -8,13 +8,14 @@ function neliosrp_split_nth( $str, $delim, $n ) {
 
 function neliosrp_extract_excerpt( $post, $words = 80 ) {
 	if ( NelioSRPSettings::use_excerpt_if_available() && strlen( $post->post_excerpt ) > 0 )
-		return apply_filters( 'the_excerpt', $post->post_excerpt );
+		return apply_filters( 'get_the_excerpt', $post->post_excerpt );
 
-	$excerpt = $post->post_content;
-	$excerpt = strip_shortcodes( $excerpt );
-	$excerpt = strip_tags( $excerpt );
-	$excerpt = neliosrp_split_nth( $excerpt, ' ', $words ) . '...';
+	$content = $post->post_content;
+	$content = strip_shortcodes( $content );
+	$content = strip_tags( $content );
+	$excerpt = neliosrp_split_nth( $content, ' ', $words );
+	if ( strlen( $excerpt ) < strlen( $content ) )
+		$excerpt .= '...';
 	return $excerpt;
 }
 
-?>

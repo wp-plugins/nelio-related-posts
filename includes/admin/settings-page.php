@@ -37,14 +37,14 @@ class NelioSRPSettingsPage {
 		?>
 		<div class="wrap">
 			<?php screen_icon(); ?>
-			<h2>Nelio Related Posts (powered by Swiftype)</h2>		   
+			<h2>Nelio Related Posts (powered by Swiftype)</h2>
 			<br />
 			<form method="post" action="options.php">
 			<?php
 				// This prints out all hidden setting fields
 				settings_fields( 'neliosrp_settings_group' );
 				do_settings_sections( 'neliosrp-settings' );
-				submit_button(); 
+				submit_button();
 			?>
 			</form>
 		</div>
@@ -54,7 +54,7 @@ class NelioSRPSettingsPage {
 	/**
 	 * Register and add settings
 	 */
-	public function page_init() {		
+	public function page_init() {
 
 		register_setting(
 			'neliosrp_settings_group',
@@ -69,16 +69,7 @@ class NelioSRPSettingsPage {
 		// ================================================================
 			array( $this, 'print_section_info' ),
 			'neliosrp-settings'
-		);  
-
-		add_settings_field(
-			'section_title',
-			'Section Title',
-		// ----------------------------------------------------------------
-			array( $this, 'section_title_callback' ),
-			'neliosrp-settings',
-			'rel_posts_section'
-		);	  
+		);
 
 		add_settings_field(
 			'max_num_of_rel_posts',
@@ -87,7 +78,7 @@ class NelioSRPSettingsPage {
 			array( $this, 'max_num_of_rel_posts_callback' ),
 			'neliosrp-settings',
 			'rel_posts_section'
-		);	  
+		);
 
 		add_settings_field(
 			'use_excerpt',
@@ -96,7 +87,7 @@ class NelioSRPSettingsPage {
 			array( $this, 'use_excerpt_callback' ),
 			'neliosrp-settings',
 			'rel_posts_section'
-		);	  
+		);
 
 		add_settings_field(
 			'max_num_of_words_in_excerpt',
@@ -105,36 +96,26 @@ class NelioSRPSettingsPage {
 			array( $this, 'max_num_of_words_in_excerpt_callback' ),
 			'neliosrp-settings',
 			'rel_posts_section'
-		);	  
+		);
 
 		add_settings_field(
-			'read_more_label', 
-			'Label for Read More', 
+			'read_more_label',
+			'Label for Read More',
 		// ----------------------------------------------------------------
-			array( $this, 'read_more_label_callback' ), 
-			'neliosrp-settings', 
+			array( $this, 'read_more_label_callback' ),
+			'neliosrp-settings',
 			'rel_posts_section'
-		);	  
-
-
-		add_settings_field(
-			'two_columns', 
-			'Two Columns', 
-		// ----------------------------------------------------------------
-			array( $this, 'two_columns_label_callback' ), 
-			'neliosrp-settings', 
-			'rel_posts_section'
-		);	  
+		);
 
 
 		add_settings_field(
-			'auto_append', 
-			'Location of Rel. Posts', 
+			'two_columns',
+			'Two Columns',
 		// ----------------------------------------------------------------
-			array( $this, 'auto_append_label_callback' ), 
-			'neliosrp-settings', 
+			array( $this, 'two_columns_label_callback' ),
+			'neliosrp-settings',
 			'rel_posts_section'
-		);	  
+		);
 
 
 		add_settings_section(
@@ -144,27 +125,19 @@ class NelioSRPSettingsPage {
 		// ================================================================
 			array( $this, 'print_section_info' ),
 			'neliosrp-settings'
-		);  
+		);
 
 		add_settings_field(
-			'cache_interval', 
-			'Update Interval (days)', 
-			array( $this, 'cache_interval_callback' ), 
-			'neliosrp-settings', 
+			'cache_interval',
+			'Update Interval (days)',
+			array( $this, 'cache_interval_callback' ),
+			'neliosrp-settings',
 			'cache_section'
-		);	  
+		);
 
 	}
 
 	public function print_section_info() {
-	}
-
-	public function section_title_callback() {
-		printf(
-			'<input type="text" id="section_title" name="neliosrp_settings[section_title]" value="%s" placeholder="%s" />',
-			NelioSRPSettings::get_title(),
-			NelioSRPSettings::DEFAULT_SECTION_TITLE
-		);
 	}
 
 	public function max_num_of_rel_posts_callback() {
@@ -203,38 +176,6 @@ class NelioSRPSettingsPage {
 		?> /><?php
 	}
 
-	public function auto_append_label_callback() {
-		$field_name = 'auto_append';
-		printf(
-			'<select id="%1$s" name="neliosrp_settings[%1$s]" style="width:100%;" value="%s">',
-			$field_name,
-			(NelioSRPSettings::append_to_content_automatically() ? '1':'0')
-		);
-		?>
-			<option value='1'><?php _e( 'Append automatically after post\'s content', 'nelioab' ); ?></option>
-			<option value='0'<?php
-				if ( !NelioSRPSettings::append_to_content_automatically() )
-					echo ' selected="selected"';
-			?>><?php _e( 'Place manually in your theme', 'nelioab' ); ?></option>
-		</select>
-		<br><span id="<?php echo $field_name; ?>-descr" class="description"><?php
-			_e( 'Edit your theme and call the following function from wherever you want the related posts to appear:<br><strong>neliosrp_the_related_posts();</strong>' );
-		?></span>
-		<script>
-			jQuery(document).ready(function() {
-				var change = function() {
-					var option = jQuery("#<?php echo $field_name; ?>").attr('value');
-					var descr = jQuery("#<?php echo $field_name; ?>-descr");
-					if ( option == 0 ) descr.show();
-					else descr.hide();
-				};
-				change();
-				jQuery("#<?php echo $field_name; ?>").on("change", function() { change(); });
-			});
-		</script>
-		<?php
-	}
-
 	public function cache_interval_callback() {
 		printf(
 			'<input type="text" id="cache_interval" name="neliosrp_settings[cache_interval]" value="%s" placeholder="%s" />',
@@ -248,4 +189,3 @@ class NelioSRPSettingsPage {
 if ( is_admin() )
 	$my_settings_page = new NelioSRPSettingsPage();
 
-?>
