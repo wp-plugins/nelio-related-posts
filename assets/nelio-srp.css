@@ -1,0 +1,3 @@
+div.neliosrp article.post { margin-top: 3em; }
+div.neliosrp.neliosrp-two-columns > div.neliosrp-row > article { float:left; width:48%; }
+div.neliosrp.neliosrp-two-columns > div.neliosrp-row > article:last-child { margin-left:10px; }
