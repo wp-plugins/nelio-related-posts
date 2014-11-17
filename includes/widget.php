@@ -30,17 +30,19 @@ class NelioSRP_Widget extends WP_Widget {
 
 		// This is where you run the code and display the output
 		global $neliosrp_main;
-		$neliosrp_main->the_related_posts();
+		if ( isset( $instance['template'] ) ) $template = $instance['template'];
+		else $template = false;
+		$neliosrp_main->the_related_posts( $template );
 
 		echo $args['after_widget'];
 	}
 
 	// Widget Backend
 	public function form( $instance ) {
-		if ( isset( $instance['title'] ) )
-			$title = $instance['title'];
-		else
-			$title = __( 'Related Posts', 'neliosrp' );
+		if ( isset( $instance['title'] ) ) $title = $instance['title'];
+		else $title = __( 'Related Posts', 'neliosrp' );
+		if ( isset( $instance['template'] ) ) $template = $instance['template'];
+		else $template = '';
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
@@ -50,6 +52,14 @@ class NelioSRP_Widget extends WP_Widget {
 				name="<?php echo $this->get_field_name( 'title' ); ?>"
 				value="<?php echo esc_attr( $title ); ?>" />
 		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'template' ); ?>"><?php _e( 'Template Name (without the «.php» extension):' ); ?></label>
+			<input
+				class="widefat" type="text" placeholder="Default"
+				id="<?php echo $this->get_field_id( 'template' ); ?>"
+				name="<?php echo $this->get_field_name( 'template' ); ?>"
+				value="<?php echo esc_attr( $template ); ?>" />
+		</p>
 		<?php
 	}
 
@@ -57,6 +67,7 @@ class NelioSRP_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['template'] = ( ! empty( $new_instance['template'] ) ) ? strip_tags( $new_instance['template'] ) : '';
 		return $instance;
 	}
 }

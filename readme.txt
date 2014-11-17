@@ -3,7 +3,7 @@ Contributors: nelio
 Tags: related post, swiftype, search, cached
 Requires at least: 3.3
 Tested up to: 4.0
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,15 @@ Get a list of Related Posts by querying your Swiftype account. If Swiftype is
 not available, it uses WordPress' regular search system. By default, the
 related post search is performed using one of the available tags, but you can
 override it using your own search query string.
+
+> **Custom Templates**<br>
+> Version 2.1.0 let's you define your own templates for displaying each related
+> post. Just create a directory named `nelioefi` in your theme's directory and
+> create the template you want to use such as, for instance,
+> `template-name.php`. When inserting the widget, specify that the template is
+> `template-name` and you're ready to go!
+>
+> (In the directory `template-examples` you'll find some examples).
 
 **Note** If you want to use this plugin with your Swiftype account, please keep
 in mind you must have the official [Swiftype
@@ -47,6 +56,10 @@ essentials and you're done!
 
 == Changelog ==
 
+= 2.1.0 =
+* Use custom templates for rendering related posts for widget.
+
+
 = 2.0.0 =
 * Swiftype Related Posts are now widget based. Place them wherever you want!
 * Some minor improvements.
@@ -75,6 +88,6 @@ capabilities.
 
 == Upgrade Notice ==
 
-= 2.0.0 =
-Insert swiftype related posts using the new widget.
+= 2.1.0 =
+Use custom templates for rendering related posts for widget.
 

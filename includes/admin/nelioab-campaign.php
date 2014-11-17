@@ -22,12 +22,12 @@ if ( !function_exists( 'nelioab_campaign_notice' ) ) {
 		$mailing = 'neliosrp';
 
 		$messages[0] = '<strong>Nelio A/B Testing</strong> will help you ' .
-			'deliver to every reader a <a href="http://wp-abtesting.com/' .
+			'deliver to every reader a <a target="blank" href="http://wp-abtesting.com/' .
 			'nelio-ab-testing-publishers/?mailing=%1$s">more engaging and ' .
 			'relevant reading experience</a>.';
 
 		$messages[1] = 'Do you want to get more money out of your ' .
-			'site? <strong>Nelio A/B Testing</strong> is a <a href="' .
+			'site? <strong>Nelio A/B Testing</strong> is a <a target="blank" href="' .
 			'http://wp-abtesting.com/nelio-ab-testing-business/' .
 			'?mailing=%1$s">native conversion optimization service for ' .
 			'WordPress</a> that will help you improve your site.';
@@ -42,7 +42,7 @@ if ( !function_exists( 'nelioab_campaign_notice' ) ) {
 
 		$messages[4] = 'Have you ever wondered what your visitors do in your ' .
 			'site? Subscribe to <strong>Nelio A/B Testing</strong> for free and ' .
-			'get insightful <a href="http://wp-abtesting.com/heatmaps-teach-us/' .
+			'get insightful <a target="blank" href="http://wp-abtesting.com/heatmaps-teach-us/' .
 			'?mailing=%1$s">Heatmaps and Clickmaps</a>.';
 
 		$message = $messages[mt_rand( 0, count( $messages )-1 )];
@@ -50,7 +50,7 @@ if ( !function_exists( 'nelioab_campaign_notice' ) ) {
 			if ( mt_rand( 0, 100 ) < 30 )
 				$message = $messages[0];
 
-		$message .= ' <strong>Check our <a href="http://wp-abtesting.com/' .
+		$message .= ' <strong>Check our <a target="blank" href="http://wp-abtesting.com/' .
 			'subscription-plans/?mailing=%1$s">subscription plans</a> and ' .
 			'try it for free</strong>.';
 

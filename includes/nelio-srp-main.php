@@ -21,14 +21,18 @@ if ( !class_exists( 'NelioSRPMain' ) ) {
 			wp_enqueue_style( 'nelio-srp', NELIOSRP_ASSETS_URL . '/nelio-srp.css' );
 		}
 
-		public function the_related_posts() {
-
+		public function the_related_posts( $template_name ) {
 			global $post;
 			$single_post_id = 0;
 			if ( is_single() && is_object( $post ) && isset( $post->ID ) )
 				$single_post_id = $post->ID;
 
-			require_once( NELIOSRP_DIR . '/related-post-template.php' );
+			$template = NELIOSRP_DIR . '/related-post-template.php';
+			if ( $template_name ) {
+				$aux = get_stylesheet_directory() . '/nelioefi/' . $template_name . '.php';
+				if ( file_exists( $aux ) )
+					$template = $aux;
+			}
 
 			$related_posts = $this->get_related_posts();
 			$num_of_posts  = min( count( $related_posts ), NelioSRPSettings::get_max_num_of_rel_posts() );
@@ -42,14 +46,17 @@ if ( !class_exists( 'NelioSRPMain' ) ) {
 					<div class="neliosrp<?php echo $two_cols_class; ?>" data-swiftype-index="false"><?php
 					echo "\n";
 					$i = 0;
-					foreach ( $related_posts as $rel_post ) {
-						if ( $rel_post->ID == $single_post_id )
+					global $post;
+					$ori_post = $post;
+					foreach ( $related_posts as $post ) {
+						if ( $post->ID == $single_post_id )
 							continue;
 						if ( $i%2 == 0 ) echo "\t\t\t\t\t$div\n";
-						echo NelioSRPRelatedPostTemplate::render( $rel_post );
+						include( $template );
 						if ( $i%2 != 0 ) echo "\t\t\t\t\t</div>\n";
 						$i++;
 					}
+					$post = $ori_post;
 					if ( $i%2 != 0 ) echo "\t\t\t\t\t</div>"; ?>
 				</div>
 				<?php
