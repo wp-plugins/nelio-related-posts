@@ -20,8 +20,8 @@ class NelioSRPSettingsPage {
 	public function add_plugin_page() {
 		// This page will be under "Settings"
 		add_theme_page(
-			'Nelio Related Posts',
-			'Related Posts',
+			__( 'Nelio Related Posts', 'neliosrp' ),
+			__( 'Related Posts', 'neliosrp' ),
 			'manage_options',
 			'neliosrp-settings',
 			array( $this, 'create_admin_page' )
@@ -37,7 +37,7 @@ class NelioSRPSettingsPage {
 		?>
 		<div class="wrap">
 			<?php screen_icon(); ?>
-			<h2>Nelio Related Posts (powered by Swiftype)</h2>
+			<h2><?php _e( 'Nelio Related Posts (powered by Swiftype)', 'neliosrp' ); ?></h2>
 			<br />
 			<form method="post" action="options.php">
 			<?php
@@ -65,7 +65,7 @@ class NelioSRPSettingsPage {
 		add_settings_section(
 			'rel_posts_section',
 		// ================================================================
-			'Related Posts',
+			__( 'Related Posts', 'neliosrp' ),
 		// ================================================================
 			array( $this, 'print_section_info' ),
 			'neliosrp-settings'
@@ -73,7 +73,7 @@ class NelioSRPSettingsPage {
 
 		add_settings_field(
 			'max_num_of_rel_posts',
-			'Number of Related Posts',
+			__( 'Number of Related Posts', 'neliosrp' ),
 		// ----------------------------------------------------------------
 			array( $this, 'max_num_of_rel_posts_callback' ),
 			'neliosrp-settings',
@@ -82,7 +82,7 @@ class NelioSRPSettingsPage {
 
 		add_settings_field(
 			'use_excerpt',
-			'Use Excerpt (if available)',
+			__( 'Use Excerpt (if available)', 'neliosrp' ),
 		// ----------------------------------------------------------------
 			array( $this, 'use_excerpt_callback' ),
 			'neliosrp-settings',
@@ -91,7 +91,7 @@ class NelioSRPSettingsPage {
 
 		add_settings_field(
 			'max_num_of_words_in_excerpt',
-			'Words in Excerpt',
+			__( 'Words in Excerpt', 'neliosrp' ),
 		// ----------------------------------------------------------------
 			array( $this, 'max_num_of_words_in_excerpt_callback' ),
 			'neliosrp-settings',
@@ -100,28 +100,17 @@ class NelioSRPSettingsPage {
 
 		add_settings_field(
 			'read_more_label',
-			'Label for Read More',
+			__( 'Label for Read More', 'neliosrp' ),
 		// ----------------------------------------------------------------
 			array( $this, 'read_more_label_callback' ),
 			'neliosrp-settings',
 			'rel_posts_section'
 		);
 
-
-		add_settings_field(
-			'two_columns',
-			'Two Columns',
-		// ----------------------------------------------------------------
-			array( $this, 'two_columns_label_callback' ),
-			'neliosrp-settings',
-			'rel_posts_section'
-		);
-
-
 		add_settings_section(
 			'cache_section',
 		// ================================================================
-			'Cache',
+			__( 'Cache', 'neliosrp' ),
 		// ================================================================
 			array( $this, 'print_section_info' ),
 			'neliosrp-settings'
@@ -129,7 +118,7 @@ class NelioSRPSettingsPage {
 
 		add_settings_field(
 			'cache_interval',
-			'Update Interval (days)',
+			__( 'Update Interval (days)', 'neliosrp' ),
 			array( $this, 'cache_interval_callback' ),
 			'neliosrp-settings',
 			'cache_section'
@@ -168,12 +157,6 @@ class NelioSRPSettingsPage {
 			NelioSRPSettings::get_read_more_label(),
 			NelioSRPSettings::DEFAULT_READ_MORE_LABEL
 		);
-	}
-
-	public function two_columns_label_callback() { ?>
-		<input type="checkbox" id="two_columns" name="neliosrp_settings[two_columns]" <?php
-			checked( NelioSRPSettings::use_two_columns() );
-		?> /><?php
 	}
 
 	public function cache_interval_callback() {

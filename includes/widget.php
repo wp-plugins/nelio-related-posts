@@ -9,10 +9,10 @@ class NelioSRP_Widget extends WP_Widget {
 			'NelioSRP_Widget',
 
 			// Widget name will appear in UI
-			__('Related Posts by Nelio', 'neliosrp'),
+			__( 'Related Posts by Nelio', 'neliosrp' ),
 
 			// Widget description
-			array( 'description' => __( 'Display a list of your featured posts.', 'neliosrp' ), )
+			array( 'description' => __( 'Displays a list of the posts that are related to the current post, using either a Swiftype search or a regular WordPress search.', 'neliosrp' ), )
 		);
 
 	}
@@ -45,7 +45,7 @@ class NelioSRP_Widget extends WP_Widget {
 		else $template = '';
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'neliosrp' ); ?></label>
 			<input
 				class="widefat" type="text"
 				id="<?php echo $this->get_field_id( 'title' ); ?>"
@@ -53,7 +53,7 @@ class NelioSRP_Widget extends WP_Widget {
 				value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'template' ); ?>"><?php _e( 'Template Name (without the «.php» extension):' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'template' ); ?>"><?php _e( 'Template Name (without the «.php» extension):', 'neliosrp' ); ?></label>
 			<input
 				class="widefat" type="text" placeholder="Default"
 				id="<?php echo $this->get_field_id( 'template' ); ?>"

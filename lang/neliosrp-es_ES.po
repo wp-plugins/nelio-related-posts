@@ -1,0 +1,82 @@
+# Copyright (C) 2014 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/nelio-related-posts\n"
+"POT-Creation-Date: 2014-11-25 10:11:59+00:00\n"
+"PO-Revision-Date: 2014-12-04 17:52+0100\n"
+"Last-Translator: David Aguilera <david.aguilera@neliosoftware.com>\n"
+"Language-Team: Spanish <david.aguilera@neliosoftware.com>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: includes/admin/edit-post.php:19
+msgid "Search String"
+msgstr "Cadena de búsqueda"
+
+#: includes/admin/nelioab-campaign.php:61
+msgid "Dismiss"
+msgstr "Descartar"
+
+#: includes/admin/settings-page.php:23
+msgid "Nelio Related Posts"
+msgstr "Nelio Entradas Relacionadas"
+
+#: includes/admin/settings-page.php:24 includes/admin/settings-page.php:68
+#: includes/widget.php:43
+msgid "Related Posts"
+msgstr "Entradas Relacionadas"
+
+#: includes/admin/settings-page.php:40
+msgid "Nelio Related Posts (powered by Swiftype)"
+msgstr "Nelio Entradas Relacionadas (con Swiftype)"
+
+#: includes/admin/settings-page.php:76
+msgid "Number of Related Posts"
+msgstr "Número de entradas"
+
+#: includes/admin/settings-page.php:85
+msgid "Use Excerpt (if available)"
+msgstr "Utiliza el resumen (si hay)"
+
+#: includes/admin/settings-page.php:94
+msgid "Words in Excerpt"
+msgstr "Palabras en el resumen"
+
+#: includes/admin/settings-page.php:103
+msgid "Label for Read More"
+msgstr "Etiqueta \"Leer más\""
+
+#: includes/admin/settings-page.php:113
+msgid "Cache"
+msgstr "Cache"
+
+#: includes/admin/settings-page.php:121
+msgid "Update Interval (days)"
+msgstr "Interval de actualización (días)"
+
+#: includes/widget.php:12
+msgid "Related Posts by Nelio"
+msgstr "Entradas Relacionadas por Nelio"
+
+#: includes/widget.php:15
+msgid ""
+"Displays a list of the posts that are related to the current post, using "
+"either a Swiftype search or a regular WordPress search."
+msgstr ""
+"Añade una lista de entradas relacionadas (respecto a la entrada actual), las "
+"cuales se obtienen a través de una búsqueda a Swiftype o una búsqueda "
+"regular de WordPress."
+
+#: includes/widget.php:48
+msgid "Title:"
+msgstr "Título:"
+
+#: includes/widget.php:56
+msgid "Template Name (without the «.php» extension):"
+msgstr "Nombre de la plantilla (sin la extensión «.php»):"

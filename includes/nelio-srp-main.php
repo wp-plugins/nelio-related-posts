@@ -29,7 +29,7 @@ if ( !class_exists( 'NelioSRPMain' ) ) {
 
 			$template = NELIOSRP_DIR . '/related-post-template.php';
 			if ( $template_name ) {
-				$aux = get_stylesheet_directory() . '/nelioefi/' . $template_name . '.php';
+				$aux = get_stylesheet_directory() . '/neliosrp/' . $template_name . '.php';
 				if ( file_exists( $aux ) )
 					$template = $aux;
 			}
@@ -37,13 +37,9 @@ if ( !class_exists( 'NelioSRPMain' ) ) {
 			$related_posts = $this->get_related_posts();
 			$num_of_posts  = min( count( $related_posts ), NelioSRPSettings::get_max_num_of_rel_posts() );
 			if ( $num_of_posts > 0 ) {
-				if ( NelioSRPSettings::use_two_columns() )
-					$two_cols_class = ' neliosrp-two-columns';
-				else
-					$two_cols_class = '';
 				$div = '<div class="neliosrp-row">';
 				?>
-					<div class="neliosrp<?php echo $two_cols_class; ?>" data-swiftype-index="false"><?php
+					<div class="neliosrp" data-swiftype-index="false"><?php
 					echo "\n";
 					$i = 0;
 					global $post;

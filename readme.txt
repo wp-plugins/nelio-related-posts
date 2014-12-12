@@ -3,7 +3,7 @@ Contributors: nelio
 Tags: related post, swiftype, search, cached
 Requires at least: 3.3
 Tested up to: 4.0
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,7 +19,7 @@ override it using your own search query string.
 
 > **Custom Templates**<br>
 > Version 2.1.0 let's you define your own templates for displaying each related
-> post. Just create a directory named `nelioefi` in your theme's directory and
+> post. Just create a directory named `neliosrp` in your theme's directory and
 > create the template you want to use such as, for instance,
 > `template-name.php`. When inserting the widget, specify that the template is
 > `template-name` and you're ready to go!
@@ -29,6 +29,25 @@ override it using your own search query string.
 **Note** If you want to use this plugin with your Swiftype account, please keep
 in mind you must have the official [Swiftype
 Search](https://wordpress.org/plugins/swiftype-search/) plugin installed.
+
+
+= Featured On =
+
+* [Swiftype's Facebook
+Page](https://www.facebook.com/swiftype/posts/518418398270015) (Facebook)
+* [Our New Plugin–Nelio Related
+Posts](http://neliosoftware.com/nelio-related-posts/) (Nelio's blog)
+
+
+= Related Plugins by [Nelio](http://neliosoftware.com) =
+
+* [Nelio A/B Testing](http://nelioabtesting.com/?fp=wordpress.org) |
+[Download](https://wordpress.org/plugins/nelio-ab-testing/)
+* Nelio External Featured Image |
+[Download](https://wordpress.org/plugins/external-featured-image/)
+* Nelio Featured Posts |
+[Download](https://wordpress.org/plugins/nelio-featured-posts/)
+
 
 _Featured image by [Thomas
 Tolkien](https://www.flickr.com/photos/tomtolkien/4821397096)_
@@ -55,6 +74,13 @@ essentials and you're done!
 
 
 == Changelog ==
+
+= 2.1.1 =
+* Translated to Spanish by Nelio.
+* Translated to Catalan by Nelio.
+* Translated to Serbian by Ogi Djuraskovic, from [First Site
+Guide](http://firstsiteguide.com/) (thanks Ogi!).
+
 
 = 2.1.0 =
 * Use custom templates for rendering related posts for widget.
@@ -88,6 +114,6 @@ capabilities.
 
 == Upgrade Notice ==
 
-= 2.1.0 =
-Use custom templates for rendering related posts for widget.
+= 2.1.1 =
+Added some translations to other languages.
 

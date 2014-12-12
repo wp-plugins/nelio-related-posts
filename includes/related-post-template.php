@@ -3,7 +3,7 @@ global $post;
 $open_link = sprintf(
 	'<a class="related_post_link" href="%s" title="%s">',
 	get_permalink( $post->ID ),
-	esc_attr( apply_filters( 'the_title', $post->post_title ) )
+	esc_attr( apply_filters( 'the_title', $post->post_title, $post->ID ) )
 );
 $close_link = '</a>';
 ?>

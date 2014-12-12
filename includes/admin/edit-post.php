@@ -16,7 +16,7 @@ function neliosrp_search_query_meta( $post ) {
 	$neliosrp_search_query = get_post_meta( $post->ID, '_neliosrp_search_query', true );
 	?>
 	<input type="text"
-		placeholder="Search String"
+		placeholder="<?php _e( 'Search String', 'neliosrp' ); ?>"
 		name="neliosrp_search_query" value="<?php echo esc_attr( $neliosrp_search_query ); ?>" />
 	<?php
 }
