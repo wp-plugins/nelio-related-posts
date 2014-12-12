@@ -31,6 +31,19 @@ in mind you must have the official [Swiftype
 Search](https://wordpress.org/plugins/swiftype-search/) plugin installed.
 
 
+= Features =
+
+* **Swiftype-powered Search** The list of related posts is built using your
+Swiftype account.
+* **Regular WordPress Search** You can also use the plugin without a Swiftype
+account. Just install the plugin and the regular WordPress search will be used.
+* **Advanced search** Related posts are based on tags. However, you can use
+your own search query.
+* **Customization** You can tweak a few details of the related post list, such
+as the section title, the number of words in the excerpt, or the number of days
+for the cache will be valid.
+
+
 = Featured On =
 
 * [Swiftype's Facebook
@@ -51,19 +64,6 @@ Posts](http://neliosoftware.com/nelio-related-posts/) (Nelio's blog)
 
 _Featured image by [Thomas
 Tolkien](https://www.flickr.com/photos/tomtolkien/4821397096)_
-
-
-= Features =
-
-* **Swiftype-powered Search** The list of related posts is built using your
-Swiftype account.
-* **Regular WordPress Search** You can also use the plugin without a Swiftype
-account. Just install the plugin and the regular WordPress search will be used.
-* **Advanced search** Related posts are based on tags. However, you can use
-your own search query.
-* **Customization** You can tweak a few details of the related post list, such
-as the section title, the number of words in the excerpt, or the number of days
-for the cache will be valid.
 
 
 == Screenshots ==
