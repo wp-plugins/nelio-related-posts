@@ -1,0 +1,79 @@
+# Copyright (C) 2014 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/nelio-related-posts\n"
+"POT-Creation-Date: 2014-12-04 16:34:57+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-12-09 13:25+0100\n"
+"Last-Translator: Borisa Djuraskovic <borisad@webhostinghub.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: includes/admin/edit-post.php:19
+msgid "Search String"
+msgstr "Pretraži niz"
+
+#: includes/admin/nelioab-campaign.php:61
+msgid "Dismiss"
+msgstr "Otkaži "
+
+#: includes/admin/settings-page.php:23
+msgid "Nelio Related Posts"
+msgstr "Nelio Related Posts"
+
+#: includes/admin/settings-page.php:24 includes/admin/settings-page.php:68
+#: includes/widget.php:43
+msgid "Related Posts"
+msgstr "Povezani postovi"
+
+#: includes/admin/settings-page.php:40
+msgid "Nelio Related Posts (powered by Swiftype)"
+msgstr "Nelio Related Posts (omogućio Swiftype)"
+
+#: includes/admin/settings-page.php:76
+msgid "Number of Related Posts"
+msgstr "Broj povezanih postova"
+
+#: includes/admin/settings-page.php:85
+msgid "Use Excerpt (if available)"
+msgstr "Upotrebi odlomak (ako je raspoloživ)"
+
+#: includes/admin/settings-page.php:94
+msgid "Words in Excerpt"
+msgstr "Reči u odlomku"
+
+#: includes/admin/settings-page.php:103
+msgid "Label for Read More"
+msgstr "Oznaka za ‘Pročitaj više’"
+
+#: includes/admin/settings-page.php:113
+msgid "Cache"
+msgstr "Keš"
+
+#: includes/admin/settings-page.php:121
+msgid "Update Interval (days)"
+msgstr "Interval ažuriranja (u danima)"
+
+#: includes/widget.php:12
+msgid "Related Posts by Nelio"
+msgstr "Related Posts, Nelio"
+
+#: includes/widget.php:15
+msgid ""
+"Displays a list of the posts that are related to the current post, using "
+"either a Swiftype search or a regular WordPress search."
+msgstr ""
+"Prikazuje listu postova povezanih sa trenutnim postom, koristeći Swiftype "
+"pretragu ili uobičajenu WordPress pretragu."
+
+#: includes/widget.php:48
+msgid "Title:"
+msgstr "Naslov:"
+
+#: includes/widget.php:56
+msgid "Template Name (without the «.php» extension):"
+msgstr "Naziv šablona (bez «.php» ekstenzije):"
