@@ -39,7 +39,7 @@ Page](https://www.facebook.com/swiftype/posts/518418398270015) (Facebook)
 Posts](http://neliosoftware.com/nelio-related-posts/) (Nelio's blog)
 
 
-= Related Plugins by [Nelio](http://neliosoftware.com) =
+= Related Plugins by Nelio =
 
 * [Nelio A/B Testing](http://nelioabtesting.com/?fp=wordpress.org) |
 [Download](https://wordpress.org/plugins/nelio-ab-testing/)
