@@ -24,6 +24,9 @@ override it using your own search query string.
 > `template-name.php`. When inserting the widget, specify that the template is
 > `template-name` and you're ready to go!
 >
+> **Warning** Remember to save your templates somewhere save before updating
+> your theme!
+>
 > (In the directory `template-examples` you'll find some examples).
 
 **Note** If you want to use this plugin with your Swiftype account, please keep
