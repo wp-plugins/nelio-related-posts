@@ -1,5 +1,5 @@
 === Nelio Related Posts ===
-Contributors: nelio
+Contributors: nelio, davilera
 Tags: related post, swiftype, search, cached
 Requires at least: 3.3
 Tested up to: 4.1
